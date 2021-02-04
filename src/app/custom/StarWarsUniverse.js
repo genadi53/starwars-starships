@@ -21,9 +21,8 @@ export default class StarWarsUniverse {
 
         const starshipCount = await this._getStarshipCount();
         let currentShip = 0;
-        //let validStarships = 0;
 
-        while (currentShip /*validStarship*/ < parseInt(starshipCount)) {
+        while (currentShip < parseInt(starshipCount)) {
             const response = await fetch(`https://swapi.dev/api/starships/${currentShip}`);
 
             if (!response.ok) {
@@ -36,9 +35,7 @@ export default class StarWarsUniverse {
             if (this._validateData(data)) {
                 const starship = new Starship(data.name, this._parseConsumablesData(data.consumables), this._parsePassengerData(data.passengers));
                 this.starships.push(starship);
-                //console.log(starship);
             }
-            //validStarships++;
             currentShip++;
         }
     }
@@ -55,8 +52,6 @@ export default class StarWarsUniverse {
             }
         });
 
-        //console.log(bestStarship);
-        //console.log(this.starships);
         return bestStarship;
     }
 
@@ -92,7 +87,6 @@ export default class StarWarsUniverse {
             if(word === property)
             return type[property];
         }
-
 
     }
 }
