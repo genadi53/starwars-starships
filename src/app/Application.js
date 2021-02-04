@@ -33,8 +33,8 @@ export default class Application extends EventEmitter {
    */
   async init() {
     // Initiate classes and wait for async operations here.
-    await this.data.universe.init();
 
+    await this.data.universe.init();
     this.emit(Application.events.APP_READY);
   }
 }
