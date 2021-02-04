@@ -55,7 +55,7 @@ export default class StarWarsUniverse {
             }
         });
 
-        console.log(bestStarship);
+        //console.log(bestStarship);
         //console.log(this.starships);
         return bestStarship;
     }
@@ -63,7 +63,7 @@ export default class StarWarsUniverse {
     _validateData(ship) {
         if (typeof ship.consumables === undefined || typeof ship.consumables === null || ship.consumables === 'unknown') {
             return false;
-        } else if (typeof ship.passenger === undefined || typeof ship.passengers === null || ship.passengers === 'unknown'|| ship.passengers === '0' ){//|| ship.passengers === 'n/a') {
+        } else if (typeof ship.passenger === undefined || typeof ship.passengers === null || ship.passengers === 'unknown'|| ship.passengers === '0' || ship.passengers === 'n/a') {
             return false;
         } else return true;
     }
