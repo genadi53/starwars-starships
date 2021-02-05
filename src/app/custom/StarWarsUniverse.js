@@ -12,7 +12,7 @@ export default class StarWarsUniverse {
     }
 
     async _getStarshipCount() {
-        const response = await fetch('https://swapi.dev/api/starships/');
+        const response = await fetch('https://swapi.booost.bg/api/starships');
         const data = await response.json();
         return data.count;
     }
@@ -23,7 +23,7 @@ export default class StarWarsUniverse {
         let currentShip = 0;
 
         while (currentShip < parseInt(starshipCount)) {
-            const response = await fetch(`https://swapi.dev/api/starships/${currentShip}`);
+            const response = await fetch(`https://swapi.booost.bg/api/starships/${currentShip}`);
 
             if (!response.ok) {
                 currentShip++;
